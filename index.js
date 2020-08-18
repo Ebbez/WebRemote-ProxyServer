@@ -41,7 +41,7 @@ const sockserver = net.createServer((c) => {
   
   var createId = true;
   while (createId) {
-    var randomID = Math.random().toString(36).substring(4);
+    var randomID = Math.random().toString(36).substring(5);
     if (!clients[randomID]) {
       createId = false;
       clients[randomID] = c;
@@ -54,6 +54,11 @@ const sockserver = net.createServer((c) => {
     console.log("Client " + clientID + " disconnected");
     clients[clientID] = null;
   })
-}).listen(5224).on('error', (err) => {
+
+  c.on('error', (err) => {
+    console.log("Socket server encountered an error: " + err);
+  })
+}).on('error', (err) => {
   console.log("Socket server encountered an error: " + err);
-})
+}).listen(5224)
+

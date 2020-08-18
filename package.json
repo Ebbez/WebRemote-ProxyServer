@@ -1,14 +1,15 @@
 {
   "name": "webremote-proxyserver",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Proxy server for WebRemote in case the user does not have access to the network administration (either because he/she can't allow the app through Windows' firewall or can't edit port forwards).",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "nodemon ."
   },
   "author": "Ebbe Zeinstra",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
   }
 }
