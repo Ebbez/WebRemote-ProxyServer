@@ -1,0 +1,17 @@
+<!-- Proxy server page for WebRemote in case the user does not have access to the network administration (either because he/she can't allow the app through Windows' firewall or can't edit port forwards). -->
+<!-- Copyright (C) 2020  Ebbe Zeinstra -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebRemote Proxy</title>
+</head>
+<body>
+  <input id='linkid' type='text' placeholder='Link ID'>
+  <input id='connect' type='submit' value='Connect'>
+  <script>
+    document.getElementById("connect").onclick = () => {
+      window.location.href = window.location.origin + "/control/" + document.getElementById("linkid").value;
+    }
+  </script>
+</body>
+</html>
